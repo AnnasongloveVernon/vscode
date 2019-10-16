@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!--[if lte IE 8]>
+         <script src="../js/html5shiv.min.js"></script>   
+    <![endif]-->   
+</head>
+<body>
+    <!-- 谷歌上静音才能自动播放 muted，ie9以上不用-->
+    <!-- 主要属性 controls/autoplay/loop  audio属性与video一致-->
+    <!-- <video src="../video/1.mp4" preload="auto" muted  controls="controls" autoplay width="300px"></video> -->
+    <video width="300" autoplay controls >
+        <source src="../video/1.mp4">
+        <source src="../video/1.ogg">
+        <source src="../video/1.webm">
+    </video>
+    <script>
+        //页面加载后如果需要播放就有声音可以这样设置
+           // document.querySelector('video').muted = false;
+        
+    </script>
+</body>
+</html>

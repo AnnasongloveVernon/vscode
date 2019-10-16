@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        header{
+            height:200px;
+            background:Red;
+            /* display: block; */
+        }
+    </style>
+    <script>
+        // 第一种在ie8生效的方法 创建标签
+       // document.createElement('header');
+       
+
+    </script>
+    <!-- 第二种ie8生效的方法 通过js插件 让h5的标签能在ie低版本中使用-->
+    <!-- <script src="../js/html5shiv.min.js"></script> -->
+
+    <!-- 终极解决方案 仅在ie浏览器才加载 腻子程序-->
+    <!--[if lte IE 8]>
+        <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <!-- <header>
+        <nav></nav>
+    </header>
+    <article>
+        <section></section>
+    </article>
+    <footer></footer> -->
+
+    <header>这是头部</header>
+    
+</body>
+</html>
