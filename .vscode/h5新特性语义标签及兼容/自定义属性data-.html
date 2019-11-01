@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>data-xxx</title>
+</head>
+<body>
+    <div class="one" data-val="10" data-height="50" data-test-name="test">i am ten</div>
+
+    <script>
+        var oDiv = document.querySelector('div');
+        //获取自定义属性的值和所有自定义属性的对象
+        var obj = oDiv.dataset;
+        var val = obj.val;
+        var h = obj.height;
+        var testName = obj.testName;//驼峰命名法
+        //设置自定义属性的值
+        obj.age=25;
+        obj.testAge=30;
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>h5的API</title>
+    <style>
+        .red-bg{
+            height:50px;
+            width:200px;
+            background:red;
+            display:block;
+        }
+        .blue-bg{
+            height:200px;
+            width:50px;
+            background:blue;
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><p><span>1</span></p></li>
+        <li><p><span class="blue-bg">2</span></p></li>
+        <li><p><span>3</span></p></li>
+    </ul>
+    <input type="button" value="toggle">
+    <script>
+        //可以是css中任何一种选择器 通过该选择器，只能选中第一个元素
+        var oSpan = document.querySelector('li p span');
+        var oInput = document.querySelector('input');
+        oSpan.style.color='blue';   
+        oSpan.classList.add('red-bg');
+        var aSpan = document.querySelectorAll('li p span'); 
+        for(var i = 1;i<aSpan.length;i++){
+            aSpan[i].style.color='yellow';
+            if(aSpan[i].classList.contains('blue-bg')){
+                aSpan[i].classList.remove('blue-bg');
+            }else{
+                aSpan[i].classList.add('blue-bg');
+            }     
+        } 
+        oInput.onclick=function(){
+            oSpan.classList.toggle('blue-bg');
+        }
+        
+        // classList.remove();
+        // classList.contains();
+        // classList.toggle();
+        
+    </script>
+</body>
+</html>

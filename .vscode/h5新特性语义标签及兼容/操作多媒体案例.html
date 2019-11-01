@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <video controls controlslist="nodownload nofullscreen">
+        <source src="static/1.mp4">
+        <source src="static/1.ogg">
+        <source src="static/1.wmv">
+    </video>
+    <input type="button" value="播放" class="play">
+    <input type="button" value="暂停" class="pause">
+    <input type="button" value="快进" class="go">
+    <input type="button" value="快退" class="back">
+
+    <script>
+        var video = document.querySelector('video');
+        var playBtn = document.querySelector('.play');
+        var pauseBtn = document.querySelector('.pause');
+        var goBtn = document.querySelector('.go');
+        var backBtn = document.querySelector('.back');
+
+        playBtn.onclick = function(){
+            video.play();
+        }
+        pauseBtn.onclick = function(){
+            video.pause();
+            console.log(video.currentTime);
+        }
+        goBtn.onclick = function(){
+            var oldcur = video.currentTime;
+            video.currentTime = oldcur+2;
+        }
+        backBtn.onclick = function(){
+            var oldcur = video.currentTime;
+            video.currentTime = oldcur-2;
+        }
+        
+    </script>
+</body>
+</html>

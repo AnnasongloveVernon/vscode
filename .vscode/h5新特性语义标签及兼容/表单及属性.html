@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input{
+            margin:10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <form action="" method="get" autocomplete="on" id="test">
+        
+        <input type="text" id="uname"name="uname" pattern="^[a-zA-Z0-9]{6,12}$" placeholder="请输入用户名" required>
+        邮箱地址：
+        <!-- 合法邮箱地址 -->
+        <input type="email"><br>
+        <input type="url"><br>
+        <input type="range"><br>
+        <input type="color"><br>
+        <input type="date"><br>
+        <input type="month"><br>
+        <input type="week"><br>
+        <input type="time"><br>
+        <select multiple>
+            <option value="aaa">aaa</option>
+            <option value="aaa2">aaa</option>
+            <option value="aaa3">aaa</option>
+            <option value="aaa4">aaa</option>
+        </select>
+
+        <input type="text" name="" list="data-list">
+        <datalist id="data-list">
+            <option value="111">sss</option>
+            <option value="222">sss</option>
+            <option value="333">sss</option>
+            <option value="444">sss</option>
+        </datalist>
+        <input type="submit" value="提交">
+
+    </form>
+        <!-- 当表单控件不在form当中，并且要跟form一同提交时 -->
+        用户名:<input type="text" name="userName" form="test">
+    <script>
+        /*
+            valueMissing
+            必填项为空，返回true，否则返回false，配合required属性使用
+            typeMismatch
+            判断输入类型是否匹配，不匹配返回true，否则返回false，配合email、number、url等类型使用
+            patternMismatch
+            判断正则是否通过，没通过返回true，通过返回false，配合pattern属性使用
+            toolong
+            判断当前元素的值的长度是否大最大值，大于返回true，否则返回false，配合maxlength使用，但实际上如果设置maxlength，就无法输入超出长度范围的值
+            rangeUnderflow
+            判断当前元素值是否小于min，与min属性配合，不与max比较
+            rangeOverflow
+            判断当前元素值是否大于max，与max属性配合，不与min比较
+            stepMismatch
+            判断当前元素值是否符合step要求，与step属性配合
+            customError
+            使用自定义的验证错误提示信息，配合setCustomValidity()方法使用；
+        */
+        var user=document.getElementById("uname");
+        user.onblur=function(){
+            if(user.value){
+                user.setCustomValidity("");//现将有输入时的提示设置为空
+            }else if(user.validity.valueMissing){
+                user.setCustomValidity("用户名不能为空");  
+            };
+            if(user.validity.patternMismatch){ 
+                user.setCustomValidity("用户名只能是英文或数字，长度6到12位");
+            }
+        };
+
+        
+
+        /*
+            email:合法邮箱地址
+            url:合法的网址
+            number:只能输入数字
+            range:滑块
+            color:颜色选择器
+            date:显示日期
+            month：显示月份
+            week：显示第几周
+            time：显示时间
+
+            form的属性
+             autocomplete="on/off"
+             novalidate=true/false
+            input的属性
+             autofacus:自动获取焦点
+        */
+       
+
+        // document.querySelectorAll('input')[0].addEventListener('click',function(){
+        //     console.log(console.log(this.value()))
+        // },false)
+    </script>
+</body>
+</html>

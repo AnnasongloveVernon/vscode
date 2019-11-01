@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>获取地理定位</title>
+</head>
+<body>
+    <script>
+        //获取一次当前位置 不靠谱   
+        //  window.navigator.geolocation.getCurrentPosition(success,error);  
+        
+        // function success(msg){
+        //     console.log(msg);
+        // }
+        // function error(msg){
+        //     console.log(msg);
+        // }
+        // 实时获取当前位置
+        window.navigator.geolocation.watchPosition(success,error);  
+        function success(position){
+            console.log(position);
+            console.log(position.coords.latitude);//经度
+             console.log(position.coords.longitude);//纬度
+        }
+        function error(msg){
+            console.log(msg);
+        }
+    </script>
+</body>
+</html>
